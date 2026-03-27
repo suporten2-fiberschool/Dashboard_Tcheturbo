@@ -93,7 +93,7 @@
     </section>
 
     <section class="panel">
-      <h2>Top cursos — visão geral (acumulado)</h2>
+      <h2 id="ttl_top">Top cursos — visão geral (mês selecionado)</h2>
       <div id="t_top" class="table"></div>
     </section>
 
@@ -218,6 +218,49 @@ function fmtPctAllowText(v){
   const n = Number(v);
   return Number.isFinite(n) ? `${n.toFixed(1)}%` : "–";
 }
+function rowsForMonth(mesSel, trilhaSel){
+  const rows = DATA.students?.[mesSel] || [];
+  return rows.filter(r => trilhaSel === T_ALL ? true : r.trilha === trilhaSel);
+}
+function buildTopCursosForMonth(mesSel, trilhaSel){
+  const rows = rowsForMonth(mesSel, trilhaSel).filter(r => r.curso && r.curso !== "Pontos Manuais");
+  const acc = new Map();
+
+  for(const r of rows){
+    const key = String(r.curso);
+    if(!acc.has(key)){
+      acc.set(key, {
+        curso: key,
+        alunos: new Set(),
+        progresso_sum: 0,
+        progresso_n: 0,
+        pontos_total: 0
+      });
+    }
+    const item = acc.get(key);
+    item.alunos.add(String(r.aluno));
+    const prog = Number(r.progresso);
+    if(Number.isFinite(prog)){
+      item.progresso_sum += prog;
+      item.progresso_n += 1;
+    }
+    item.pontos_total += Number(r.pontos_mes) || 0;
+  }
+
+  return Array.from(acc.values())
+    .map(item => ({
+      curso: item.curso,
+      alunos_liberados: item.alunos.size,
+      progresso_medio: item.progresso_n ? Number((item.progresso_sum / item.progresso_n).toFixed(2)) : 0,
+      pontos_total: Math.round(item.pontos_total)
+    }))
+    .sort((a, b) =>
+      (b.progresso_medio - a.progresso_medio) ||
+      (b.alunos_liberados - a.alunos_liberados) ||
+      (b.pontos_total - a.pontos_total) ||
+      String(a.curso).localeCompare(String(b.curso))
+    );
+}
 function renderMiniBar(pct){
   if (!Number.isFinite(pct)) return "–";
   const w = Math.max(0, Math.min(100, pct));
@@ -323,10 +366,10 @@ function render(){
   let ser = null, top = [];
   if (tr === T_ALL){
     ser = DATA.overall;
-    top = DATA.overall_top_cursos || [];
+    top = buildTopCursosForMonth(mm, tr);
   } else {
     ser = DATA.trilhas[tr]?.series || {meses:[],progMed:[],pontos:[],conclusoes:[],ativos:[]};
-    top = DATA.trilhas[tr]?.top_cursos_global || [];
+    top = buildTopCursosForMonth(mm, tr);
   }
 
   const i = ser.meses.indexOf(mm);
@@ -389,6 +432,9 @@ function render(){
 
   charts.pts = lineNoLimit("c_pts", ser.meses, acum ? prefixSum(ser.pontos) : ser.pontos, "Pontos");
   $("#ttl_pts").textContent = acum ? "Pontos — mês a mês (acumulado)" : "Pontos — mês a mês";
+  $("#ttl_top").textContent = tr === T_ALL
+    ? `Top cursos — ${mm}`
+    : `Top cursos da trilha — ${mm}`;
 
   // Top cursos
   renderTable("#t_top", top, [

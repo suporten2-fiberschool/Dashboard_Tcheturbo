@@ -1,1 +1,7 @@
 .DS_Store
+*.xlsx
+*.sql
+preprocess_*.py
+produtos_provas.csv
+qtde_aulas.xlsx
+
