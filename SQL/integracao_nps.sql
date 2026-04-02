@@ -1,0 +1,45 @@
+CREATE TABLE IF NOT EXISTS "integracao_nps" (
+   "id" serial NOT NULL UNIQUE,
+   "id_pesquisa" varchar(20),
+   "id_card" numeric(20),
+   "telefone_contato" varchar(20),
+   "cliente" varchar(254),
+   "nome_contato" varchar(100),
+   "email_contato" varchar(100),
+   "csm" varchar(100),
+   "telefone_csm" varchar(20),
+   "email_csm" varchar(100),
+   "phase_name" varchar(50),
+   "phase_id" numeric(20),
+   "cnpj" varchar(20),
+   "instancia" varchar(100),
+   "subdominio" varchar(100),
+   "plano_contratado" varchar(50),
+   "tempo_contrato" numeric(12),
+   "mensalidade" varchar(255),
+   "data_envio" date,
+   "data_resposta" timestamp with time zone,
+   "nota" varchar(20),
+   "classificacao_nps" varchar(50),
+   "mensagem_melhoria" text,
+   "sessionld" varchar(100),
+   "userld" varchar(100),
+   "id_pipedrive" bigint,
+   "projeto_talentos" varchar(100),
+   "certificados" varchar(100),
+   "academia_de_talentos" varchar(100),
+   "status_processamento" varchar(20),
+   "origem" varchar(20),
+   "nota_numerica" bigint,
+   "dia" numeric(12),
+   "mes" numeric(12),
+   "ano" numeric(12),
+   "wa_id" varchar(20),
+   "contato_tipo" varchar(50),
+   PRIMARY KEY ("id")
+);
+
+
+
+
+
