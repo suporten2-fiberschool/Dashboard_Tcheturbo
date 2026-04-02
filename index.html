@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -6,47 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dashboard Gerencial — Trilhas</title>
 <style>
-<<<<<<< HEAD
-  :root{--bg:#0f172a;--panel:#0b1222;--card:#0d1b2a;--muted:#9fb1c6;--txt:#e5e7eb;--ok:#22c55e;--bad:#ef4444}
-  *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.42 system-ui,Segoe UI,Roboto}
-  header{padding:14px 18px;border-bottom:1px solid #1f2b3a;background:#0f172a;display:flex;gap:16px;align-items:end;flex-wrap:wrap}
-  .ctrl{display:flex;flex-direction:column;gap:6px}
-  .row{display:flex;align-items:center;gap:8px}
-  select,input[type=file],button{height:36px;background:#0b1222;color:#d6e2f4;border:1px solid #1e293b;border-radius:10px;padding:0 10px;cursor:pointer}
-  input[type=checkbox]{transform:scale(1.1);cursor:pointer}
-  button{background:#0f192c}
-  main{padding:16px 18px;display:grid;gap:14px}
-  .tabs{display:flex;gap:8px;margin-top:8px}
-  .tab{padding:8px 12px;border:1px solid #1e293b;border-radius:10px;background:#0b1222;color:#cdd8e6;cursor:pointer}
-  .tab.active{outline:2px solid #3b82f6;background:#0f192c}
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .panel{background:var(--panel);border:1px solid #1e293b;border-radius:14px;padding:12px}
-  .card{background:var(--card);border:1px solid #1e293b;border-radius:14px;padding:12px}
-  /* agora temos 6 cards de KPI */
-  .kpis{display:grid;grid-template-columns:repeat(6,minmax(160px,1fr));gap:10px}
-  .card h3{margin:0 0 4px;color:#bcd0e6;font-size:12px}
-  .card p{margin:0;font-size:20px}
-  .delta{font-size:11px;margin-top:6px;color:#cbd5e1}
-  .delta.pos{color:var(--ok)} .delta.neg{color:var(--bad)}
-  .chartwrap{height:260px}
-  .table{overflow:auto;border-radius:10px;border:1px solid #1e293b}
-  table{width:100%;border-collapse:collapse;background:#0b1222}
-  th,td{padding:8px 10px;border-bottom:1px solid #132238;white-space:nowrap}
-  th{background:#0f192c;position:sticky;top:0;text-align:left}
-  .hidden{display:none}
-  .search{display:flex;gap:8px;margin:8px 0}
-  .search input{flex:1;height:36px;background:#0b1222;color:#d6e2f4;border:1px solid #1e293b;border-radius:10px;padding:0 10px}
-
-  /* Insights */
-  .insights{display:grid;grid-template-columns:1fr;gap:8px}
-  .insight-item{background:#0b1222;border:1px solid #1e293b;border-radius:10px;padding:10px}
-  .pill{display:inline-block;margin-left:6px;padding:2px 8px;border-radius:999px;font-size:11px;background:#0f192c;color:#cbd5e1;border:1px solid #1e293b}
-
-  /* mini barra de progresso */
-  .mini-bar{min-width:140px;display:flex;align-items:center;gap:8px}
-  .mini-bar-track{flex:1;height:8px;background:#132238;border-radius:999px;overflow:hidden}
-  .mini-bar-fill{height:100%;background:#22c55e}
-=======
   :root{
     --bg:#0B1220;--panel:#0E1726;--card:#111827;--muted:#90A3BF;--txt:#F3F7FF;--ok:#22c55e;--bad:#ef4444;
     --border:#22324C;--accent:#5EA7FF;--accent-soft:#7CC4FF;--shadow:0 22px 44px rgba(0,0,0,.28)
@@ -179,17 +137,23 @@
     width:260px;
     max-width:260px
   }
+  #selAlunoMedia{
+    width:260px;
+    max-width:260px
+  }
+  #selTrilhaMedia{
+    width:220px;
+    max-width:220px
+  }
   #qMedia{
     width:260px;
     max-width:260px
   }
 
-  /* Insights */
   .insights{display:grid;grid-template-columns:1fr;gap:8px}
   .insight-item{background:linear-gradient(180deg, rgba(17,24,39,.94), rgba(20,30,48,.9));border:1px solid var(--border);border-radius:16px;padding:14px;color:#D8E3F2}
   .pill{display:inline-block;margin-left:8px;padding:3px 10px;border-radius:999px;font-size:11px;background:#132036;color:#DDE8F7;border:1px solid var(--border);font-weight:700}
 
-  /* mini barra de progresso */
   .mini-bar{min-width:140px;display:flex;align-items:center;gap:8px}
   .mini-bar-track{flex:1;height:10px;background:#132238;border-radius:999px;overflow:hidden;border:1px solid rgba(94,167,255,.08)}
   .mini-bar-fill{height:100%;background:linear-gradient(90deg,#22c55e,#4ade80)}
@@ -207,22 +171,17 @@
     .grid2{grid-template-columns:1fr}
     .search{flex-direction:column;align-items:stretch}
     .search-field{width:100%}
-    #selCursoAluno,#selAluno,#qMedia{width:100%;max-width:none}
+    #selCursoAluno,#selAluno,#selTrilhaMedia,#selAlunoMedia,#qMedia{width:100%;max-width:none}
   }
->>>>>>> 1328dee (atualizar dados)
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <header>
-<<<<<<< HEAD
-  <div style="font-weight:700">Dashboard Gerencial — Trilhas</div>
-=======
   <div class="brand">
     <div class="brand-title">Dashboard Gerencial</div>
     <div class="brand-subtitle">Acompanhamento visual de trilhas, cursos, pontos, horas e desempenho</div>
   </div>
->>>>>>> 1328dee (atualizar dados)
 
   <div class="ctrl"><span>Trilha</span><select id="selTrilha"></select></div>
 
@@ -230,20 +189,11 @@
     <span>Mês</span>
     <div class="row">
       <select id="selMes"></select>
-<<<<<<< HEAD
-      <label class="row" style="gap:6px">
-        <input type="checkbox" id="chkAcum">
-        <span>Acumular até o mês</span>
-      </label>
-    </div>
-  </div>
-=======
     </div>
   </div>
 
   <button id="btnApplyFilters" class="filters-action" type="button">Aplicar filtros</button>
 
->>>>>>> 1328dee (atualizar dados)
 </header>
 
 <main>
@@ -253,7 +203,6 @@
     <div id="tabMedias" class="tab">Médias por Trilha</div>
   </div>
 
-  <!-- ====== OVERVIEW ====== -->
   <div id="viewOverview">
     <section class="panel">
       <h2>KPIs</h2>
@@ -262,11 +211,7 @@
         <div class="card"><h3>Progresso médio </h3><p id="k_prog">–</p></div>
         <div class="card"><h3>Conclusões (no mês)</h3><p id="k_conc">–</p><div id="d_conc" class="delta">–</div></div>
         <div class="card"><h3>Pontos (no mês)</h3><p id="k_pts">–</p><div id="d_pts" class="delta">–</div></div>
-<<<<<<< HEAD
-=======
         <div class="card"><h3>Horas realizadas</h3><p id="k_horas">–</p><div id="d_horas" class="delta">–</div></div>
->>>>>>> 1328dee (atualizar dados)
-        <!-- NOVO: nota média -->
         <div class="card"><h3>Nota média (quem fez prova)</h3><p id="k_nota">–</p><div id="d_nota" class="delta">–</div></div>
         <div class="card"><h3>Mês</h3><p id="k_mes">–</p></div>
       </div>
@@ -278,33 +223,25 @@
     </section>
 
     <section class="panel">
-<<<<<<< HEAD
-=======
       <h2 id="ttl_horas_chart">Horas realizadas — mês a mês</h2>
       <div class="chartwrap"><canvas id="c_horas"></canvas></div>
     </section>
 
     <section class="panel">
->>>>>>> 1328dee (atualizar dados)
       <h2 id="ttl_top">Top cursos — visão geral (mês selecionado)</h2>
       <div id="t_top" class="table"></div>
     </section>
 
-    <!-- ====== INSIGHTS ====== -->
     <section class="panel">
       <h2>Insights automáticos</h2>
       <div id="insights" class="insights"></div>
     </section>
   </div>
 
-  <!-- ====== ALUNOS ====== -->
   <div id="viewAlunos" class="hidden">
     <section class="panel">
       <h2>Alunos — conforme filtros (Trilha + Mês)</h2>
       <div class="search">
-<<<<<<< HEAD
-        <input id="qAluno" placeholder="Filtrar por aluno ou curso..." />
-=======
         <div class="search-field">
           <label for="selCursoAluno">Curso</label>
           <select id="selCursoAluno"></select>
@@ -313,7 +250,6 @@
           <label for="selAluno">Aluno</label>
           <select id="selAluno"></select>
         </div>
->>>>>>> 1328dee (atualizar dados)
       </div>
       <div>
         <h3>Matrículas e progresso por curso</h3>
@@ -322,12 +258,18 @@
     </section>
   </div>
 
-  <!-- ====== MÉDIAS POR TRILHA ====== -->
   <div id="viewMedias" class="hidden">
     <section class="panel">
       <h2>Médias por Trilha — (Aluno × Trilha)</h2>
       <div class="search">
-        <input id="qMedia" placeholder="Filtrar por aluno ou trilha..." />
+        <div class="search-field">
+          <label for="selTrilhaMedia">Trilha</label>
+          <select id="selTrilhaMedia"></select>
+        </div>
+        <div class="search-field">
+          <label for="selAlunoMedia">Aluno</label>
+          <select id="selAlunoMedia"></select>
+        </div>
       </div>
       <div>
         <h3>Progresso médio dentro dos cursos da trilha (mês selecionado)</h3>
@@ -335,29 +277,18 @@
       </div>
     </section>
   </div>
-<<<<<<< HEAD
-=======
 
->>>>>>> 1328dee (atualizar dados)
 </main>
 
 <script>
-/* ========= estado ========= */
 let DATA = null;
-<<<<<<< HEAD
-let charts = { prog:null, pts:null };
-const $ = s => document.querySelector(s);
-const T_ALL = "(Todas as trilhas)";
-=======
 let charts = { prog:null, pts:null, horas:null };
 const $ = s => document.querySelector(s);
 const T_ALL = "(Todas as trilhas)";
 const M_ALL = "(Todas as datas)";
 const C_ALL = "(Todos os cursos)";
 const A_ALL = "(Todos os alunos)";
->>>>>>> 1328dee (atualizar dados)
 
-/* ========= utilitários ========= */
 function renderTable(sel, rows, cols){
   const box = $(sel);
   if(!rows?.length){
@@ -377,12 +308,6 @@ function renderTable(sel, rows, cols){
 }
 function lineNoLimit(id, labels, data, label){
   const ctx = document.getElementById(id).getContext('2d');
-<<<<<<< HEAD
-  return new Chart(ctx,{
-    type:'line',
-    data:{labels, datasets:[{label,data,tension:.25}]},
-    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{labels:{boxWidth:12}}}}
-=======
   const grad = ctx.createLinearGradient(0, 0, 0, 260);
   grad.addColorStop(0, "rgba(94,167,255,.35)");
   grad.addColorStop(1, "rgba(94,167,255,0)");
@@ -432,19 +357,10 @@ function lineDuration(id, labels, data, label){
         }
       }
     }
->>>>>>> 1328dee (atualizar dados)
   });
 }
 function barProgressSnapshot(id, labels, data){
   const ctx = document.getElementById(id).getContext('2d');
-<<<<<<< HEAD
-  return new Chart(ctx,{
-    type:'bar',
-    data:{labels, datasets:[{label:'Progresso médio (%)', data}]},
-    options:{
-      responsive:true, maintainAspectRatio:false,
-      scales:{ y:{ beginAtZero:true, max:100, title:{display:true,text:'Progresso médio (%)'} } },
-=======
   const grad = ctx.createLinearGradient(0, 0, 0, 260);
   grad.addColorStop(0, "rgba(94,167,255,.95)");
   grad.addColorStop(1, "rgba(37,99,235,.55)");
@@ -457,34 +373,21 @@ function barProgressSnapshot(id, labels, data){
         x:{ticks:{color:"#D7E2F2"},grid:{display:false}},
         y:{ beginAtZero:true, max:100, ticks:{color:"#D7E2F2"}, grid:{color:"rgba(255,255,255,.06)"}, title:{display:true,text:'Progresso médio (%)',color:"#D7E2F2"} }
       },
->>>>>>> 1328dee (atualizar dados)
       plugins:{ legend:{ display:false } }
     }
   });
 }
-function prefixSum(arr){
-  let s=0; return arr.map(v=> s + (Number(v)||0));
-}
-
 function setDelta(elId, curr, prev){
   const el = document.getElementById(elId);
-
-  // se não tiver valor anterior ou atual válido, não mostra variação
   if (prev == null || !Number.isFinite(curr) || !Number.isFinite(prev)) {
     el.textContent = "–";
     el.className = "delta";
     return;
   }
-
-  // variação percentual vs mês anterior
   const d = ((curr - prev) / (Math.abs(prev) > 0 ? Math.abs(prev) : 1)) * 100;
-
   el.textContent = `${d > 0 ? '+' : ''}${d.toFixed(1)}% vs mês anterior`;
   el.className = "delta " + (d > 0 ? "pos" : d < 0 ? "neg" : "");
 }
-
-
-/* delta específico para nota (pontos, não %) */
 function setDeltaNota(elId, curr, prev){
   const el = document.getElementById(elId);
   if(curr == null || prev == null){
@@ -502,9 +405,6 @@ function fmtPctAllowText(v){
   const n = Number(v);
   return Number.isFinite(n) ? `${n.toFixed(1)}%` : "–";
 }
-<<<<<<< HEAD
-function rowsForMonth(mesSel, trilhaSel){
-=======
 function formatDuration(totalSeconds){
   const secs = Math.max(0, Math.round(Number(totalSeconds) || 0));
   const hours = Math.floor(secs / 3600);
@@ -552,7 +452,6 @@ function rowsForMonth(mesSel, trilhaSel){
   if(isAllDates(mesSel)){
     return aggregateStudentRows(trilhaSel);
   }
->>>>>>> 1328dee (atualizar dados)
   const rows = DATA.students?.[mesSel] || [];
   return rows.filter(r => trilhaSel === T_ALL ? true : r.trilha === trilhaSel);
 }
@@ -601,34 +500,16 @@ function renderMiniBar(pct){
   return `<div class="mini-bar"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:${w}%"></div></div><span>${pct.toFixed(1)}%</span></div>`;
 }
 
-/* ========= selects ========= */
 function populateSelectors(){
-<<<<<<< HEAD
-  const t = $("#selTrilha"), m = $("#selMes");
-=======
-  const t = $("#selTrilha"), m = $("#selMes"), c = $("#selCursoAluno"), a = $("#selAluno");
->>>>>>> 1328dee (atualizar dados)
+  const t = $("#selTrilha"), m = $("#selMes"), c = $("#selCursoAluno"), a = $("#selAluno"), tm = $("#selTrilhaMedia"), am = $("#selAlunoMedia");
   t.innerHTML = `<option>${T_ALL}</option>`;
   Object.keys(DATA.trilhas).forEach(tr=>{
     const o=document.createElement("option"); o.value=tr; o.textContent=tr; t.appendChild(o);
   });
-<<<<<<< HEAD
-  m.innerHTML = DATA.meses.map(mm=>`<option>${mm}</option>`).join("");
-  t.value = T_ALL;
-  m.value = DATA.meses.at(-1) || "";
-}
-
-/* ========= KPIs helper ========= */
-function kpisFromSeries(ser, idx, acum=false){
-  const prog = ser.progMed[idx] ?? 0;
-  const atv  = (ser.ativos ? ser.ativos[idx] : 0) ?? 0;
-  if(!acum){
-    return { prog, atv, pts: ser.pontos[idx] ?? 0, conc: ser.conclusoes[idx] ?? 0 };
-  }
-  const pts  = ser.pontos.slice(0, idx+1).reduce((a,b)=>a+(Number(b)||0),0);
-  const conc = ser.conclusoes.slice(0, idx+1).reduce((a,b)=>a+(Number(b)||0),0);
-  return { prog, atv, pts, conc };
-=======
+  tm.innerHTML = `<option>${T_ALL}</option>`;
+  Object.keys(DATA.trilhas).forEach(tr=>{
+    const o=document.createElement("option"); o.value=tr; o.textContent=tr; tm.appendChild(o);
+  });
   m.innerHTML = [`<option>${M_ALL}</option>`, ...DATA.meses.map(mm=>`<option>${mm}</option>`)].join("");
   const cursos = Array.from(new Set(
     Object.values(DATA.students || {})
@@ -642,47 +523,38 @@ function kpisFromSeries(ser, idx, acum=false){
   )).sort((a,b) => String(a).localeCompare(String(b)));
   c.innerHTML = [`<option>${C_ALL}</option>`, ...cursos.map(curso => `<option>${curso}</option>`)].join("");
   a.innerHTML = [`<option>${A_ALL}</option>`, ...alunos.map(aluno => `<option>${aluno}</option>`)].join("");
+  am.innerHTML = [`<option>${A_ALL}</option>`, ...alunos.map(aluno => `<option>${aluno}</option>`)].join("");
   t.value = T_ALL;
   m.value = DATA.meses.at(-1) || "";
   c.value = C_ALL;
   a.value = A_ALL;
+  tm.value = T_ALL;
+  am.value = A_ALL;
 }
 
-/* ========= KPIs helper ========= */
 function kpisFromSeries(ser, idx){
   const prog = ser.progMed[idx] ?? 0;
   const atv  = (ser.ativos ? ser.ativos[idx] : 0) ?? 0;
   return { prog, atv, pts: ser.pontos[idx] ?? 0, conc: ser.conclusoes[idx] ?? 0 };
->>>>>>> 1328dee (atualizar dados)
 }
-
-/* média de nota (quem fez prova) para trilha + mês */
 function computeAvgNota(trilhaSel, mesSel){
-<<<<<<< HEAD
-  const rows = (DATA.students?.[mesSel] || []).filter(r=>{
-=======
   const rows = rowsForMonth(mesSel, trilhaSel).filter(r=>{
->>>>>>> 1328dee (atualizar dados)
     if(trilhaSel !== T_ALL && r.trilha !== trilhaSel) return false;
     const v = r.nota_prova;
     if(v === undefined || v === null) return false;
     const n = Number(v);
-    return Number.isFinite(n); // ignora "Sem prova" / "Não realizado"
+    return Number.isFinite(n);
   });
   if(!rows.length) return null;
   const sum = rows.reduce((s,r)=> s + Number(r.nota_prova), 0);
   return sum / rows.length;
 }
-
-/* ========= abas ========= */
 function activateTab(id){
   ["tabOverview","tabAlunos","tabMedias"].forEach(t=> $("#"+t).classList.toggle("active", t===id));
   $("#viewOverview").classList.toggle("hidden", id!=="tabOverview");
   $("#viewAlunos").classList.toggle("hidden", id!=="tabAlunos");
   $("#viewMedias").classList.toggle("hidden", id!=="tabMedias");
 }
-
-/* ========= INSIGHTS ========= */
 function makeInsightItem(html){
   const d=document.createElement("div"); d.className="insight-item"; d.innerHTML=html; return d;
 }
@@ -697,8 +569,6 @@ function renderInsights(){
     return;
   }
 
-<<<<<<< HEAD
-=======
   if(isAllDates(mm)){
     const rows = rowsForMonth(mm, tr);
     const avgProg = rows.length
@@ -719,10 +589,8 @@ function renderInsights(){
     return;
   }
 
->>>>>>> 1328dee (atualizar dados)
   const i = ser.meses.indexOf(mm);
   const prev = i>0 ? i-1 : null;
-
   const progNow = (i>=0 ? (ser.progMed[i] ?? 0) : 0);
   const progPrev = (prev!=null ? (ser.progMed[prev] ?? null) : null);
   const delta = (progPrev==null) ? null : (progNow - progPrev);
@@ -738,7 +606,6 @@ function renderInsights(){
       tr===T_ALL ? "Visão consolidada entre trilhas." : `Trilha: <b>${tr}</b>.`}`
   ));
 
-  // Insight de nota média
   const notaNow = computeAvgNota(tr, mm);
   if(notaNow != null){
     box.appendChild(makeInsightItem(
@@ -749,14 +616,9 @@ function renderInsights(){
   }
 }
 
-/* ========= RENDER ========= */
 function render(){
   const tr = $("#selTrilha").value;
   const mm = $("#selMes").value;
-<<<<<<< HEAD
-  const acum = $("#chkAcum").checked;
-=======
->>>>>>> 1328dee (atualizar dados)
 
   let ser = null, top = [];
   if (tr === T_ALL){
@@ -769,10 +631,6 @@ function render(){
 
   const i = ser.meses.indexOf(mm);
   const prev = i>0 ? i-1 : null;
-<<<<<<< HEAD
-
-  const k = kpisFromSeries(ser, i, acum);
-=======
   const allDates = isAllDates(mm);
   const labelsFiltered = allDates ? ser.meses : (i >= 0 ? ser.meses.slice(0, i + 1) : []);
   const pontosFiltered = allDates ? ser.pontos : (i >= 0 ? ser.pontos.slice(0, i + 1) : []);
@@ -788,94 +646,45 @@ function render(){
   const horasCurr = allDates ? (horasSeries.reduce((a,b)=>a+(Number(b)||0),0)) : (i >= 0 ? Number(horasSeries[i] || 0) : 0);
   const horasPrev = prev != null ? Number(horasSeries[prev] || 0) : null;
   const horasPrevKpi = allDates ? null : horasPrev;
->>>>>>> 1328dee (atualizar dados)
   $("#k_mes").textContent = mm || "–";
   $("#k_prog").textContent = `${(k.prog||0).toFixed(1)}%`;
   $("#k_pts").textContent = (k.pts||0).toLocaleString("pt-BR");
   $("#k_conc").textContent = (k.conc||0).toLocaleString("pt-BR");
   $("#k_ativos").textContent = (k.atv||0).toLocaleString("pt-BR");
-<<<<<<< HEAD
-  const prevK = (prev!=null) ? kpisFromSeries(ser, prev, acum) : null;
-  // setDelta("d_prog", k.prog, prev!=null? ser.progMed[prev]:null);
-  setDelta("d_pts",  k.pts,  prevK ? prevK.pts : null);
-  setDelta("d_conc", k.conc, prevK ? prevK.conc : null);
-=======
   $("#k_horas").textContent = formatDuration(horasCurr);
   const prevK = (!allDates && prev!=null) ? kpisFromSeries(ser, prev) : null;
-  // setDelta("d_prog", k.prog, prev!=null? ser.progMed[prev]:null);
   setDelta("d_pts",  k.pts,  prevK ? prevK.pts : null);
   setDelta("d_conc", k.conc, prevK ? prevK.conc : null);
   setDelta("d_horas", horasCurr, horasPrevKpi);
->>>>>>> 1328dee (atualizar dados)
-  // setDelta("d_ativos", k.atv, prev!=null? (ser.ativos?ser.ativos[prev]:null):null);
 
-
-
-  // ----- NOTA MÉDIA (quem fez prova) -----
   let notaCurr = 0;
   let notaPrev = null;
-
   if (ser && Array.isArray(ser.notaMedia)) {
-<<<<<<< HEAD
-    if (i >= 0 && i < ser.notaMedia.length) {
-      notaCurr = Number(ser.notaMedia[i] ?? 0);
-    }
-    if (prev != null && prev >= 0 && prev < ser.notaMedia.length) {
-=======
     if (allDates) {
       notaCurr = computeAvgNota(tr, mm) ?? 0;
     } else if (i >= 0 && i < ser.notaMedia.length) {
       notaCurr = Number(ser.notaMedia[i] ?? 0);
     }
     if (!allDates && prev != null && prev >= 0 && prev < ser.notaMedia.length) {
->>>>>>> 1328dee (atualizar dados)
       notaPrev = Number(ser.notaMedia[prev]);
     }
   }
-
-  if (Number.isFinite(notaCurr) && (ser && Array.isArray(ser.notaMedia))) {
-    document.getElementById("k_nota").textContent = notaCurr.toFixed(1);
-  } else {
-    document.getElementById("k_nota").textContent = "–";
-  }
-
+  document.getElementById("k_nota").textContent = Number.isFinite(notaCurr) && (ser && Array.isArray(ser.notaMedia)) ? notaCurr.toFixed(1) : "–";
   setDeltaNota("d_nota", notaCurr, notaPrev);
 
-
-  // GRÁFICOS
   charts.prog?.destroy?.();
   charts.pts?.destroy?.();
-<<<<<<< HEAD
-=======
   charts.horas?.destroy?.();
->>>>>>> 1328dee (atualizar dados)
 
   if(tr === T_ALL){
     const trilhas = Object.keys(DATA.trilhas);
     const vals = trilhas.map(name=>{
       const s = DATA.trilhas[name]?.series;
-<<<<<<< HEAD
-=======
       if(allDates) return Number(s.progMed?.at(-1) || 0);
->>>>>>> 1328dee (atualizar dados)
       const idx = s.meses.indexOf(mm);
       return (idx>=0 ? (s.progMed[idx]||0) : 0);
     });
     charts.prog = barProgressSnapshot("c_prog", trilhas, vals);
-<<<<<<< HEAD
-    $("#ttl_prog").textContent = "Progresso médio — mês selecionado (por trilha)";
-  }else{
-    const val = (i>=0 ? (ser.progMed[i]||0) : 0);
-    charts.prog = barProgressSnapshot("c_prog", [tr], [val]);
-    $("#ttl_prog").textContent = "Progresso médio — mês selecionado";
-  }
-
-  charts.pts = lineNoLimit("c_pts", ser.meses, acum ? prefixSum(ser.pontos) : ser.pontos, "Pontos");
-  $("#ttl_pts").textContent = acum ? "Pontos — mês a mês (acumulado)" : "Pontos — mês a mês";
-  $("#ttl_top").textContent = tr === T_ALL
-    ? `Top cursos — ${mm}`
-    : `Top cursos da trilha — ${mm}`;
-=======
     $("#ttl_prog").textContent = allDates ? "Progresso médio consolidado (por trilha)" : "Progresso médio — mês selecionado (por trilha)";
   }else{
     const val = allDates ? Number(ser.progMed?.at(-1) || 0) : (i>=0 ? (ser.progMed[i]||0) : 0);
@@ -890,9 +699,7 @@ function render(){
   $("#ttl_top").textContent = tr === T_ALL
     ? `Top cursos — ${allDates ? "todas as datas" : mm}`
     : `Top cursos da trilha — ${allDates ? "todas as datas" : mm}`;
->>>>>>> 1328dee (atualizar dados)
 
-  // Top cursos
   renderTable("#t_top", top, [
     {key:"curso",             label:"Curso"},
     {key:"alunos_liberados",  label:"Alunos (com acesso)",                  fmt:v=> (Number(v)||0).toLocaleString("pt-BR")},
@@ -905,21 +712,9 @@ function render(){
   renderMedias();
 }
 
-/* === ALUNOS (linhas curso a curso) === */
 function renderAlunos(){
   const tr = $("#selTrilha").value;
   const mm = $("#selMes").value;
-<<<<<<< HEAD
-  const q = ($("#qAluno").value || "").toLowerCase().trim();
-
-  const all = DATA.students?.[mm] || [];
-  let rows = all
-    .filter(r => tr===T_ALL ? true : r.trilha===tr)
-    .filter(r => !q || (String(r.aluno).toLowerCase().includes(q) || String(r.curso).toLowerCase().includes(q)));
-
-  // Pontos manuais agregados por aluno
-  const man = DATA.manuals?.[mm] || [];
-=======
   const allDates = isAllDates(mm);
   const cursoQ = getAlunoCourseFilter();
   const alunoQ = getAlunoFilter();
@@ -929,34 +724,24 @@ function renderAlunos(){
     .filter(r => !cursoQ || String(r.curso).toLowerCase() === cursoQ)
     .filter(r => !alunoQ || String(r.aluno).toLowerCase() === alunoQ);
 
-  // Pontos manuais agregados por aluno
   const man = allDates
     ? (DATA.meses || []).flatMap(m => DATA.manuals?.[m] || [])
     : (DATA.manuals?.[mm] || []);
->>>>>>> 1328dee (atualizar dados)
   const manByAluno = {};
   for(const r of man){
     manByAluno[r.aluno] = (manByAluno[r.aluno] || 0) + (Number(r.pontos_manua_mes) || 0);
   }
   for(const [aluno, pts] of Object.entries(manByAluno)){
     if(pts <= 0) continue;
-<<<<<<< HEAD
-    if(q && !String(aluno).toLowerCase().includes(q)) continue;
-=======
     if(alunoQ && String(aluno).toLowerCase() !== alunoQ) continue;
->>>>>>> 1328dee (atualizar dados)
     rows.push({
       aluno,
       trilha: "Não se aplica",
       curso: "Pontos Manuais",
       progresso: "Não se aplica",
       nota_prova: "Não se aplica",
-<<<<<<< HEAD
-      pontos_mes: Number(pts) || 0
-=======
       pontos_mes: Number(pts) || 0,
       horas_mes_segundos: 0
->>>>>>> 1328dee (atualizar dados)
     });
   }
 
@@ -972,31 +757,23 @@ function renderAlunos(){
     {key:"aluno",     label:"Aluno"},
     {key:"trilha",    label:"Trilha"},
     {key:"curso",     label:"Curso"},
-<<<<<<< HEAD
-=======
     {key:"horas_mes_segundos", label:"Horas assistidas no mês", fmt:(v,r)=> r.curso==="Pontos Manuais" ? "Não se aplica" : formatDuration(v)},
->>>>>>> 1328dee (atualizar dados)
     {key:"progresso", label:"Progresso do aluno no curso", fmt:(v,r)=> r.curso==="Pontos Manuais" ? "Não se aplica" : renderMiniBar(Number(v)||0)},
     {key:"nota_prova",label:"Nota da prova", fmt:(v,r)=>{
         if(r.curso==="Pontos Manuais") return "Não se aplica";
         if(v === undefined || v === null || v==="") return "–";
         const n = Number(v);
-        return Number.isFinite(n) ? String(n) : v; // mostra "Sem prova" / "Não realizado" como texto
+        return Number.isFinite(n) ? String(n) : v;
       }},
     {key:"pontos_mes",label:"Pontos do mês (não manuais)", fmt:v=> (Number(v)||0).toLocaleString("pt-BR")}
   ]);
 }
 
-/* === MÉDIAS POR TRILHA (Aluno × Trilha) === */
 function renderMedias(){
-  const trSel = $("#selTrilha").value;
+  const trSel = $("#selTrilhaMedia")?.value || T_ALL;
   const mm = $("#selMes").value;
-  const q = ($("#qMedia").value || "").toLowerCase().trim();
-<<<<<<< HEAD
-  const all = (DATA.students?.[mm] || []).filter(r => r.curso && r.curso !== "Pontos Manuais");
-=======
+  const alunoQ = ($("#selAlunoMedia")?.value || A_ALL).toLowerCase().trim();
   const all = rowsForMonth(mm, trSel).filter(r => r.curso && r.curso !== "Pontos Manuais");
->>>>>>> 1328dee (atualizar dados)
 
   const agg = {};
   for(const r of all){
@@ -1018,7 +795,7 @@ function renderMedias(){
     media_trilha: x.n_total ? (x.sum/x.n_total) : NaN
   }));
 
-  rows = rows.filter(r => !q || String(r.aluno).toLowerCase().includes(q) || String(r.trilha).toLowerCase().includes(q));
+  rows = rows.filter(r => !alunoQ || alunoQ === A_ALL.toLowerCase() || String(r.aluno).toLowerCase() === alunoQ);
   rows.sort((a,b)=> String(a.aluno).localeCompare(String(b.aluno)) || String(a.trilha).localeCompare(String(b.trilha)));
 
   renderTable("#t_medias", rows, [
@@ -1030,29 +807,20 @@ function renderMedias(){
   ]);
 }
 
-/* ========= wiring ========= */
 function wireTabs(){
   $("#tabOverview").addEventListener("click", ()=> activateTab("tabOverview"));
   $("#tabAlunos").addEventListener("click", ()=> activateTab("tabAlunos"));
   $("#tabMedias").addEventListener("click", ()=> activateTab("tabMedias"));
-<<<<<<< HEAD
-  $("#qAluno")?.addEventListener("input", renderAlunos);
-  $("#qMedia")?.addEventListener("input", renderMedias);
-}
-function wireFilters(){
-  ["selTrilha","selMes","chkAcum"].forEach(id=> $("#"+id).addEventListener("change", render));
-=======
   $("#selAluno")?.addEventListener("change", renderAlunos);
   $("#selCursoAluno")?.addEventListener("change", renderAlunos);
-  $("#qMedia")?.addEventListener("input", renderMedias);
+  $("#selTrilhaMedia")?.addEventListener("change", renderMedias);
+  $("#selAlunoMedia")?.addEventListener("change", renderMedias);
 }
 function wireFilters(){
   ["selTrilha","selMes"].forEach(id=> $("#"+id).addEventListener("change", render));
   $("#btnApplyFilters")?.addEventListener("click", render);
->>>>>>> 1328dee (atualizar dados)
 }
 
-/* ========= boot ========= */
 async function loadJSON(){
   const res = await fetch("./data_trilhas.json",{cache:"no-store"});
   if(!res.ok) throw new Error("Falha ao baixar JSON");
